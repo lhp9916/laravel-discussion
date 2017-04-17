@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Discussion;
 use function compact;
+use function dd;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -52,7 +53,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $discussion = Discussion::findOrFail($id);
+        return view('forum.show', compact('discussion'));
     }
 
     /**
