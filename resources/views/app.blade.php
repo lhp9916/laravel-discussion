@@ -28,11 +28,13 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">登录</a></li>
-                <li><a href="#">注册</a></li>
+                <li><a href="/user/register">注册</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
 @yield('content')
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
