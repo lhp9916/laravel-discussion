@@ -20,7 +20,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Laravel App</a>
+            <a class="navbar-brand" href="/">Laravel App</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -29,6 +29,7 @@
             <ul class="nav navbar-nav navbar-right">
                 @if(Auth::check())
                     <li><a href="#">{{ Auth::user()->name }}</a></li>
+                    <li><a href="/logout">登出</a></li>
                 @else
                     <li><a href="/user/login">登录</a></li>
                     <li><a href="/user/register">注册</a></li>

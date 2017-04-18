@@ -18,6 +18,7 @@ Route::get('/user/register', 'UsersController@register');
 Route::post('/user/register', 'UsersController@store');
 Route::get('/user/login', 'UsersController@login');
 Route::post('/user/login', 'UsersController@sign');
+Route::get('/logout', 'UsersController@logout');
 //验证邮箱
 Route::get('/verify/{confirm_code}', 'UsersController@confirmEmail');
 
