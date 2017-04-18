@@ -148,6 +148,7 @@ return [
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Naux\Mail\SendCloudServiceProvider::class,
 
     ],
 
