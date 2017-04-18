@@ -10,10 +10,16 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+//首页
 Route::get('/', 'PostsController@index');
+
+//用户
 Route::get('/user/register', 'UsersController@register');
 Route::post('/user/register', 'UsersController@store');
+Route::get('/user/login', 'UsersController@login');
+Route::post('/user/login', 'UsersController@sign');
+//验证邮箱
 Route::get('/verify/{confirm_code}', 'UsersController@confirmEmail');
 
+//帖子
 Route::resource('discussions', 'PostsController');
