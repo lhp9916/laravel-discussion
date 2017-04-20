@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Laravel Discussion</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -28,8 +29,17 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if(Auth::check())
-                    <li><a href="#">{{ Auth::user()->name }}</a></li>
-                    <li><a href="/logout">登出</a></li>
+                    <li>
+                        <a id="dLabel" type="button" data-toggle="dropdown">
+                            {{ Auth::user()->name }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dLabel">
+                            <li><a href="#" class="fa fa-user">更换图像</a></li>
+                            <li><a href="#" class="fa fa-cog">修改密码</a></li>
+                            <li><a href="/logout" class="fa fa-sign-out">登出</a></li>
+                        </ul>
+                    </li>
+                    <li><img src="{{ Auth::user()->avatar }}" class="img-circle" width="50"></li>
                 @else
                     <li><a href="/user/login">登录</a></li>
                     <li><a href="/user/register">注册</a></li>
