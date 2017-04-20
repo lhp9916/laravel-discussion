@@ -34,7 +34,7 @@
                             {{ Auth::user()->name }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-                            <li><a href="#" class="fa fa-user">更换图像</a></li>
+                            <li><a href="/user/avatar" class="fa fa-user">更换头像</a></li>
                             <li><a href="#" class="fa fa-cog">修改密码</a></li>
                             <li><a href="/logout" class="fa fa-sign-out">登出</a></li>
                         </ul>

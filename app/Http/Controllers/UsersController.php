@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Image;
 
 class UsersController extends Controller
 {
@@ -144,6 +145,31 @@ class UsersController extends Controller
         };
         \Session::flash('user_login_failed', '密码不正确或邮箱没有验证');
         return redirect('/user/login')->withInput();
+
+    }
+
+    public function avatar()
+    {
+        return view('users.avatar');
+    }
+
+    public function changeAvatar(Request $request)
+    {
+        $file = $request->file('avatar');
+        if ($file == null) {
+            return redirect('/user/avatar');
+        }
+        $destinationPath = 'uploads/';
+        $fileName = \Auth::user()->id . '-' . time() . $file->getClientOriginalName();
+        $file->move($destinationPath, $fileName);
+
+        Image::make($destinationPath . $fileName)->fit(200)->save();
+
+        $user = User::find(\Auth::user()->id);
+        $user->avatar = '/' . $destinationPath . $fileName;
+        $user->save();
+
+        return redirect('/user/avatar');
 
     }
 }

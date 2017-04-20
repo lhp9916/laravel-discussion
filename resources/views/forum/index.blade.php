@@ -14,7 +14,8 @@
                     <div class="media">
                         <div class="media-left">
                             <a href="#">
-                                <img class="media-object img-circle" src="{{ $discussion->user->avatar }}" alt="64X64">
+                                <img class="media-object img-circle" src="{{ $discussion->user->avatar }}" width="64"
+                                     height="64" alt="64X64">
                             </a>
                         </div>
                         <div class="media-body">
