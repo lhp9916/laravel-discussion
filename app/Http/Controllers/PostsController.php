@@ -82,7 +82,13 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $discussion = Discussion::findOrFail($id);
+
+        if (\Auth::user()->id !== $discussion->user_id) {
+            return redirect('/');
+        }
+
+        return view('forum.edit', compact('discussion'));
     }
 
     /**
@@ -92,9 +98,11 @@ class PostsController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\StoreBlogRequest $request, $id)
     {
-        //
+        $discussion = Discussion::findOrFail($id);
+        $discussion->update($request->all());
+        return redirect()->action('PostsController@show', ['id' => $id]);
     }
 
     /**
