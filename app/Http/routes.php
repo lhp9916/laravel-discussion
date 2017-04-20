@@ -24,3 +24,6 @@ Route::get('/verify/{confirm_code}', 'UsersController@confirmEmail');
 
 //帖子
 Route::resource('discussions', 'PostsController');
+
+//评论
+Route::resource('comments', 'CommentsController');

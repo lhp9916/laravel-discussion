@@ -10,6 +10,12 @@ class Discussion extends Model
 
     public function user()
     {
+        //一个帖子属于一个用户
         return $this->belongsTo(User::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }
