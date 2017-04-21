@@ -1,8 +1,9 @@
 @extends('app')
 @section('content')
     <div class="container">
+        @include('editor::head')
         <div class="row">
-            <div class="col-md-8 col-md-offset-2" role="main">
+            <div class="col-md-10 col-md-offset-1" role="main">
                 {!! Form::open(['url'=>'/discussions']) !!}
 
                 @include('forum.form')
@@ -15,3 +16,4 @@
         </div>
     </div>
 @stop
+<script src="/js/jquery.min.js"></script>

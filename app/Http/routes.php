@@ -12,6 +12,7 @@
 */
 //首页
 Route::get('/', 'PostsController@index');
+Route::post('/post/upload', 'PostsController@upload');
 
 //用户
 Route::get('/user/register', 'UsersController@register');

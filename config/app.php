@@ -150,6 +150,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Naux\Mail\SendCloudServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        YuanChao\Editor\EndaEditorServiceProvider::class,
 
     ],
 
@@ -201,6 +202,7 @@ return [
         'Form' => Illuminate\Html\FormFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'EndaEditor' => YuanChao\Editor\Facade\EndaEditorFacade::class,
     ],
 
 ];
