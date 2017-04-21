@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/vue.min.js"></script>
+    <script src="/js/vue-resource.min.js"></script>
+    <meta id="token" name="token" value="{{ csrf_token() }}">
 </head>
 <body>
 <nav class="navbar navbar-default navbar-static-top">
@@ -49,7 +55,6 @@
     </div>
 </nav>
 @yield('content')
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+
 </body>
 </html>
