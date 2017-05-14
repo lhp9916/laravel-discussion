@@ -30,3 +30,5 @@ Route::resource('discussions', 'PostsController');
 
 //评论
 Route::resource('comments', 'CommentsController');
+
+Route::post('/deploy', 'DeploymentController@deploy');
